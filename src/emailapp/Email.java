@@ -7,7 +7,9 @@ public class Email {
     private String lastName;
     private String password;
     private String department;
+    private String email;
     private String alternateEmail;
+    private String companySuffix = "kenny.com";
     private int mailBoxCapacity;
     private int defaultPasswordLength = 8;
 
@@ -24,15 +26,18 @@ public class Email {
         // call a method that returns a random password
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("Your password is: " + this.password);
+
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        System.out.println("your email is: " + email);
     }
     //Ask for department
     private String setDepartment() {
         System.out.print("DEPARTMENT CODES\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter your code:");
         Scanner in = new Scanner(System.in);
         int depChoice = in.nextInt();
-        if (depChoice == 1) return "Sales";
-        else if (depChoice == 2) return "Development";
-        else if (depChoice == 3) return "Accounting";
+        if (depChoice == 1) return "sales";
+        else if (depChoice == 2) return "development";
+        else if (depChoice == 3) return "accounting";
         else return "";
     }
 
