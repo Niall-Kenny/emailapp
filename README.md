@@ -1,4 +1,4 @@
-# emailapp
+# emailApp
 This is an email app to help me learn Java.
 
 ## Run
